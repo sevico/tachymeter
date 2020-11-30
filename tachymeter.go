@@ -117,9 +117,9 @@ func (m *Tachymeter) SetWallTime(t time.Duration) {
 
 // WriteHTML writes a histograph
 // html file to the cwd.
-func (m *Metrics) WriteHTML(p string) error {
+func (m *Metrics) WriteHTML(p string, name string) error {
 	w := Timeline{}
-	w.AddEvent(m)
+	w.AddEvent(m, name)
 	return w.WriteHTML(p)
 }
 
