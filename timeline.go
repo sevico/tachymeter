@@ -85,7 +85,7 @@ func (t *Timeline) WriteHTML(p string) error {
 func genGraphHTML(te *timelineEvent, id int) string {
 	keys := []string{}
 	values := []uint64{}
-	if te.Metrics.Histogram == nil {
+	if te.Metrics == nil {
 		return ""
 	}
 	for _, b := range *te.Metrics.Histogram {
